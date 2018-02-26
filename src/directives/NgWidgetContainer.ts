@@ -422,10 +422,8 @@ export class NgWidgetContainer implements OnInit, DoCheck, OnDestroy {
 		if (widget != null) {
 			if (this.resizeEnable && widget.canResize(e)) {
 				this._resizeReady = true;
-				e.preventDefault();
 			} else if (this.dragEnable && widget.canDrag(e)) {
 				this._dragReady = true;
-				e.preventDefault();
 			}
 		}
 	}
