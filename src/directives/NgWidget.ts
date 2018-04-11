@@ -184,7 +184,6 @@ export class NgWidget implements OnInit, OnDestroy, DoCheck {
 	}
 
 	public ngOnInit(): void {
-		console.log("ngOnInit");
 		this._renderer.setElementClass(this._ngEl.nativeElement, "widget", true);
 		if (this._ngWidgetContainer.autoStyle) {this._renderer.setElementStyle(this._ngEl.nativeElement, "position", "absolute"); }
 		this._recalculateDimensions();
@@ -224,7 +223,6 @@ export class NgWidget implements OnInit, OnDestroy, DoCheck {
 	}
 
 	public canResize(e: any): string {
-		console.log("isResizable,_resizeHandle,_borderSize", this.isResizable, this._resizeHandle, this._borderSize);
 		if (!this.isResizable) return null;
 
 		if (this._resizeHandle) {
@@ -330,7 +328,6 @@ export class NgWidget implements OnInit, OnDestroy, DoCheck {
 	}
 
 	public setConfig(config: INgWidgetConfig): void {
-		console.log(config);
 		this._config = config;
 
 		this._payload = config.payload;
@@ -338,7 +335,6 @@ export class NgWidget implements OnInit, OnDestroy, DoCheck {
 		this._currentPosition.row = config.row ? config.row : NgWidget.CONST_DEFAULT_CONFIG.row;
 		if (!this._added && ((this._ngWidgetContainer.getConfig().widget_width_factor && config.unitx) != null ) ) {
 			this._size.x = this._ngWidgetContainer.widget_width_factor * config.unitx;
-			console.log(this._size.x, this._ngWidgetContainer.widget_width_factor * config.unitx);
 		} else {
 			this._size.x = config.sizex ? config.sizex : NgWidget.CONST_DEFAULT_CONFIG.sizex;
 		}
@@ -382,7 +378,6 @@ export class NgWidget implements OnInit, OnDestroy, DoCheck {
 			const changes: any = this._differ.diff(this._config);
 
 			if (changes != null ) {
-				console.log("ngDoCheck -> NgWidget");
 				this._applyChanges(changes);
 
 				return true;
@@ -401,7 +396,6 @@ export class NgWidget implements OnInit, OnDestroy, DoCheck {
 	}
 
 	public setGridPosition(widgetPosition: INgWidgetPosition, update: boolean = true): void {
-		console.log("widget -> setGridPosition", widgetPosition);
 		this._currentPosition = widgetPosition;
 		if (update) { this._recalculatePosition(); }
 
