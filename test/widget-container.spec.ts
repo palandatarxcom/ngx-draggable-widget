@@ -1,5 +1,5 @@
 import { Renderer, KeyValueDiffers } from '@angular/core';
-import { NgWidgetContainer, NgWidget, NgWidgetPlaceholder } from '../dist/main';
+import { NgWidgetContainer, NgWidget, NgWidgetPlaceholder } from '../dist/index';
 
 export function main(): void {
 	describe("NgWidgetContainer Directive", () => {

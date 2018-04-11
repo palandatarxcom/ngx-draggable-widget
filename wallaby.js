@@ -56,7 +56,7 @@ module.exports = function(wallaby) {
 
         preprocessors: {
             '**/*.js': file => file.content
-              .replace('../dist/main', '../src/main')
+              .replace('../dist/index', '../src/index')
               .replace('export function main() {', 'export function main() {} {'),
         },
 

@@ -7,7 +7,7 @@
         "test": "test"
     },
     "scripts": {
-        "cleanup": "rimraf dist/bundles dist/components dist/directives dist/interfaces dist/modules dist/main.d.ts dist/main.metadata.json dist/main.js dist/main.js.map dist/LICENSE dist/README.md",
+        "cleanup": "rimraf dist/bundles dist/components dist/directives dist/interfaces dist/modules dist/index.d.ts dist/index.metadata.json dist/index.js dist/index.js.map dist/LICENSE dist/README.md",
         "bundling": "rollup -c",
         "minify": "uglifyjs dist/bundles/NgDraggableWidget.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/NgDraggableWidget.umd.min.js",
         "copy": "copyfiles -f LICENSE README.md src/*.css dist",

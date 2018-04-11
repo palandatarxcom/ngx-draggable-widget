@@ -1,5 +1,5 @@
 export default {
-    input: 'dist/main.js',
+    input: 'dist/index.js',
     dest: 'dist/bundles/NgDraggableWidget.umd.js',
     sourceMap: false,
     format: 'umd',
